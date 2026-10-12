@@ -1,10 +1,11 @@
 [
-  {
-    "id": "Q1",
+      {
+    "id": "Q5-21",
     "name": "人工智能主题核心集",
     "field": "SU",
-    "query": "SU=('大语言模型'+'大模型')",
+    "query": "SU%=('大语言模型' + '大模型' + '基础模型' + '预训练模型' + '生成式' + '扩散模型' + '多模态' + 'Transformer' + '强化学习' + '智能体' + '具身智能' + 'Large Language Model' + 'LLM' + 'Foundation Model' + 'Generative AI' + 'Diffusion Model' + 'Multimodal' + 'Reinforcement Learning' + 'Agent' + 'Embodied AI' + 'Embodied Intelligence') AND CLC%('TP18' + 'TP391' + 'TP242' + 'TP13' + 'TP273' + 'TN912.3') ",
     "purpose": "演示主题字段检索",
-    "tier": "核心材料"
+    "tier": "核心材料",
+    "publication_time":{  "start": "2025-05-29",  "end": "2025-06-30"}
   }
 ]
