@@ -1,3 +1,12 @@
+
+Copyright (c) 2026 Yao (original work)
+Copyright (c) 2026 tyt16788 (modifications)
+
+This repository is derived from "cnki-metadata-exporter" by JYao-Chen
+(https://github.com/JYao-Chen/cnki-metadata-exporter), which is provided under
+the MIT License reproduced below. The original copyright notice and permission
+notice are retained verbatim, as required by that license.
+
 MIT License
 
 Copyright (c) 2026 Yao
@@ -19,3 +28,35 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+===============================================================================
+NOTICE - MODIFICATIONS IN THIS FORK
+===============================================================================
+
+This fork extends the original CNKI Metadata Exporter with the following
+additions. Attribution of the original work is unchanged: all functionality
+present in the upstream project remains the copyright of Yao and is licensed
+under the MIT License above.
+
+1. Publication-time range limit per collection
+   Each search collection can be restricted to an explicit publication date
+   window, and the full time range can still be requested when needed
+   (see the --all-time option and the publication_time field). This avoids
+   exporting irrelevant records and makes incremental collection reproducible.
+
+2. Automatic date-range splitting beyond the paging cap
+   CNKI stops exposing records once a result set grows past roughly 6,000
+   items. When a collection exceeds that cap, this fork automatically splits
+   its publication time range into smaller sub-ranges and continues crawling
+   each slice until all records are exported
+   (see the --max-results-per-slice option).
+
+3. Resumable runs with skip-on-repeated-failure
+   When a collection fails repeatedly, it is skipped after the retry limit is
+   reached instead of blocking the whole job. Already downloaded batches are
+   reused on re-run, so an interrupted job resumes where it stopped and the
+   remaining collections keep progressing.
+
+Permission note: this NOTICE is provided for attribution and documentation
+purposes only. It does not modify, narrow, or add conditions to the MIT
+License text above, which continues to govern the use of this software.

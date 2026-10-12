@@ -1,7 +1,7 @@
 # CNKI Metadata Exporter
 
 一个可复用的知网检索结果元数据导出工具。它使用 Playwright 打开知网专业检索，按独立检索集合执行检索，通过知网自定义导出页面分批下载 XLS 元数据，并将多个集合合并、筛选文献类型和去重。
-本项目基于 JYao-Chen/cnki-metadata-exporter修改，新增时间范围限制、超 6k 自动拆分爬取、多次失败跳过等功能。
+本项目基于 [JYao-Chen/cnki-metadata-exportr]([JYao-Chen/cnki-metadata-exporter: Reusable Playwright workflow for exporting, merging, and deduplicating CNKI metadata](https://github.com/JYao-Chen/cnki-metadata-exporter))修改，新增时间范围限制、超 6k 自动拆分爬取、多次失败跳过等功能。
 
 本项目从真实文献数据建设任务中的采集流程整理而来。**改造重点是把面向单次课题的采集流程，优化为可配置、可续接、可复用的数据处理工具**：将检索条件与程序解耦，优先使用知网原生批量导出，并为大结果集拆分、任务中断和跨集合去重补上完整处理流程。项目已移除原任务的检索词、论文数据、浏览器登录状态和专用清洗规则。
 
