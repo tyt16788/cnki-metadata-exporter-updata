@@ -1,0 +1,41 @@
+# Login/session data: never commit
+.cnki-profile/
+playwright/.auth/
+
+# Local research configuration and generated workspace data
+/.history/
+/workspace/
+/queries.json
+/new.txt
+/0.ipynb
+
+# Runtime outputs and downloaded metadata
+output/
+logs/
+data/
+*.xls
+*.xlsx
+*.csv
+*.jsonl
+*.ndjson
+*.ris
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.coverage
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
+
+.history
+.workspace
